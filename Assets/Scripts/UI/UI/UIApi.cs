@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class UIApi : MonoBehaviour
 {
-    public static UIApi instance;
+    private static UIApi instance;
     public Beerometer beerometer;
+    public DishQueueViewer dishQueueViewer;
     // Start is called before the first frame update
     void Awake()
     {
@@ -15,5 +16,10 @@ public class UIApi : MonoBehaviour
     public static Beerometer GetBeerometer()
     {
         return instance.beerometer;
+    }
+
+    public static DishQueueViewer GetDishQueueViewer()
+    {
+        return instance.dishQueueViewer;
     }
 }
