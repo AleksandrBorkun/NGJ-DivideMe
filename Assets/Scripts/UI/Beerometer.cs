@@ -20,7 +20,7 @@ public class Beerometer : MonoBehaviour
 
     public void UpdateBeerometer(float value)
     {
-        slider.value += value;
+        slider.value = value;
         fill.color = gradient.Evaluate(slider.normalizedValue);
     }
 }
