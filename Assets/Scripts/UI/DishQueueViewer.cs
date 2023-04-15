@@ -9,8 +9,10 @@ public class DishQueueViewer : MonoBehaviour
 {
     //tween to move ui to the left
     //tween to drop dish mqde or failed
+    public int DishIconNb;
     public List<DishIcon> DishIconList;
     public List<Transform> QueuePositions;
+    private List<DishIcon> DishIconQueuePosition;
 
     public TextMeshProUGUI dishCounter;
     public Sprite defaultSprite;
@@ -25,7 +27,12 @@ public class DishQueueViewer : MonoBehaviour
         dishCounter.text = "0";
     }
 
-    public void SetDishIconsWith(List<Dish> dishes)
+    public void UpdateCounter(int remainingDishes)
+    {
+        dishCounter.text = remainingDishes.ToString();
+    }
+
+    public void SetDishIconsAtGameStart(List<Dish> dishes)
     {
         DishIcon dishIcon;
         Dish dish;
@@ -45,22 +52,21 @@ public class DishQueueViewer : MonoBehaviour
         }
     }
 
-    public void UpdateCounter(int remainingDishes)
+    public void OnDishCompleted()
     {
-        dishCounter.text = remainingDishes.ToString();
+        var dish = DishIconList[0];
+        dish.transform.DOMove(Vector3.down * 100, 1.5f).SetEase(Ease.OutQuad);
+        DishIconList.RemoveAt(0);
+        DishIconList.Add(dish);
     }
 
-    public void UpdateDishIcon(int index, Sprite sprite, string text)
+    public void DisplayNewDish(Dish newDish)
     {
-        var dishIcon = DishIconList[index].GetComponent<DishIcon>();
-        dishIcon.ChangeData(sprite, text);
+        var lastIndex = DishIconList.Count - 1;
+        var dishIcon = DishIconList[lastIndex].GetComponent<DishIcon>();
+        dishIcon.ChangeData(newDish.sprite, newDish.DishName);
     }
 
-    public void DropDishTile()
-    {
-        DishIconList[0].transform.DOMove(QueuePositions[0].position, 1.5f).SetEase(Ease.OutQuad);
-       // DishIconList[0].Image.material.DOColor(invisible, TweenSpeed);
-    }
 
     private void SlideDishTileToLeft(DishIcon dishIcon, int index)
     {
