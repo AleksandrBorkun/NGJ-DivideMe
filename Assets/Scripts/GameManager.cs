@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using TMPro;
 
 public class GameManager : MonoBehaviour
 {
@@ -17,6 +18,9 @@ public class GameManager : MonoBehaviour
     private DishQueueViewer dishQueueViewer;
 
     private IngridientsSpawner ingridientsSpawner;
+    float timeLeft = 60.0f;
+    Timer timer;
+    TextMeshProUGUI timerText;
 
 
     public static GameManager Instance { get; private set; }
@@ -60,6 +64,9 @@ public class GameManager : MonoBehaviour
         dishQueueViewer.SetDishIconsAtLevelStart(currentLevel.dishes.ToList());
         dishQueueViewer.UpdateCounter(currentLevel.dishes.Length);
 
+        timer = FindObjectOfType<Timer>();
+        timerText = timer.GetComponentInChildren<TextMeshProUGUI>();
+
         Debug.Log("Game Manager Comlete Setting up level on start");
     }
 
@@ -69,6 +76,17 @@ public class GameManager : MonoBehaviour
         player.drunkenness -= .005f * Time.deltaTime * currentLevel.levelSpeed;
         beerometer.UpdateBeerometer(player.drunkenness);
 
+        CountDownTimer();
+    }
+
+    private void CountDownTimer()
+    {
+        timerText.text = ((int)timeLeft).ToString();
+        timeLeft -= Time.deltaTime;
+        if (timeLeft < 0)
+        {
+            Debug.Log("GAME OVER!");
+        }
     }
 
     public void SetupNextDish()
@@ -86,7 +104,7 @@ public class GameManager : MonoBehaviour
         }
         else
         {
-            if(currentDishIndex + 2 < currentLevel.dishes.Length)
+            if (currentDishIndex + 2 < currentLevel.dishes.Length)
             {
                 dishQueueViewer.DisplayNewDish(currentLevel.dishes[currentDishIndex + 2]);
             }
