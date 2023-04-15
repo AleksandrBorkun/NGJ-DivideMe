@@ -1,32 +1,34 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class DishQueueViewer : MonoBehaviour
 {
     //tween to move ui to the left
     //tween to drop dish mqde or failed
+    private List<int> dishesToDisplay;
 
-    private List<int> dishedToDisplay;
+    public TextMeshProUGUI dishCounter;
+
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        dishCounter.text = "0";
     }
 
-    // Update is called once per frame
-    void Update()
+    public void UpdateCounter(int remainingDishes)
     {
-        
+        dishCounter.text = remainingDishes.ToString();
     }
 
-    private void CreateDishTile()
+    public void CreateDishTile(Dish dish)
     {
 
     }
 
-    private void DropDishTile()
+    public void DropDishTile()
     {
 
     }
