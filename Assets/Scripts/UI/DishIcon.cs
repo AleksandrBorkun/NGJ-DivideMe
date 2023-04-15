@@ -10,7 +10,7 @@ public class DishIcon : MonoBehaviour
     TextMeshProUGUI Text;
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         Image = transform.Find("Icon").GetComponent<Image>();
         Text = transform.Find("Name").GetComponent<TextMeshProUGUI>();
