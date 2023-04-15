@@ -6,11 +6,15 @@ public class GameManager : MonoBehaviour
 {
     public LevelObject[] levelObjects;
 
-    private LevelObject curentLevent;
+    private LevelObject currentLevel;
     private Dish currentDish;
     private OvenController oven;
+    private Player player;
+    private Beerometer beerometer;
 
     private IngridientsSpawner ingridientsSpawner;
+
+    private int frameCount = 0;
 
     public static GameManager Instance { get; private set; }
     private void Awake()
@@ -31,8 +35,8 @@ public class GameManager : MonoBehaviour
     {
 
         Debug.Log("Game Manager Setting up level on start");
-        curentLevent = levelObjects[0];
-        currentDish = curentLevent.dishes[0];
+        currentLevel = levelObjects[0];
+        currentDish = currentLevel.dishes[0];
         // Spawn Ingridients
         ingridientsSpawner = FindObjectOfType<IngridientsSpawner>();
         ingridientsSpawner.SpawnNext(currentDish.GetRecipe());
@@ -41,8 +45,27 @@ public class GameManager : MonoBehaviour
         oven = FindObjectOfType<OvenController>();
         oven.SetDish(currentDish);
 
+        // get player
+
+        player = FindObjectOfType<Player>();
+
+        //find beerometer
+        beerometer = FindObjectOfType<Beerometer>();
+
 
         Debug.Log("Game Manager Comlete Setting up level on start");
     }
 
+
+    private void Update()
+    {
+        frameCount++;
+        player.drunkenness -= .01f * Time.deltaTime * currentLevel.levelSpeed;
+        Debug.Log(player.drunkenness);
+        beerometer.UpdateBeerometer(player.drunkenness);
+        if(player.drunkenness <= 0)
+        {
+
+        }
+    }
 }
