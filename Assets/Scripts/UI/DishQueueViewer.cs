@@ -39,7 +39,9 @@ public class DishQueueViewer : MonoBehaviour
         string dishName;
         Sprite sprite;
 
-        for (int i = 0; i < 3; i++)
+        var index = dishes.Count > DishIconNb ? DishIconNb : dishes.Count;
+
+        for (int i = 0; i < index; i++)
         {
             dish = dishes[i];
             dishIcon = DishIconList[i].GetComponent<DishIcon>();

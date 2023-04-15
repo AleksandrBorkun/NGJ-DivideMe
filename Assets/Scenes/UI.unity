@@ -1087,6 +1087,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb39ee439f15011458915804e75467c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DishIconNb: 3
   DishIconList:
   - {fileID: 952279814144445190}
   - {fileID: 1602996091875982144}
