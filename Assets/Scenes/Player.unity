@@ -312,6 +312,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inventory: {fileID: 1309840563}
+  drunkenness: 0.5
+  characterController: {fileID: 1309840558}
+--- !u!114 &1309840558 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8748688856612009363, guid: 0e74cf81e6fd82546b4797f71ceffb81, type: 3}
+  m_PrefabInstance: {fileID: 1309840555}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1309840556}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba158ff05cf30224f94bfdddec8e7635, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1309840563
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -324,3 +337,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39a9443ce12f27d45b143f449f38b8af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inventory: 

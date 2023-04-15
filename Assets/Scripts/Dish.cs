@@ -1,13 +1,16 @@
 
 using UnityEngine;
 
-public class Dish : MonoBehaviour
+[CreateAssetMenu(fileName = "Dish", menuName = "ScriptableObjects/DishObject", order = 2)]
+public class Dish : ScriptableObject
 {
 
     [SerializeField]
-    private Ingridient[] ingridients;
+    private Data.Ingridients[] ingridients;
+    public string DishName;
 
-    public Ingridient[] GetRecipe()
+
+    public Data.Ingridients[] GetRecipe()
     {
         return ingridients;
     }
