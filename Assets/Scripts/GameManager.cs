@@ -37,7 +37,7 @@ public class GameManager : MonoBehaviour
             Instance = this;
         }
 
-        
+
 
     }
 
@@ -86,7 +86,15 @@ public class GameManager : MonoBehaviour
         if (timeLeft < 0)
         {
             Debug.Log("GAME OVER!");
+            GameOver();
         }
+    }
+
+    private void GameOver()
+    {
+        //Time.timeScale = 0;
+        // Get player controller and disable it
+
     }
 
     public void SetupNextDish()
