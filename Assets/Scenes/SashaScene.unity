@@ -1414,6 +1414,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1823af3f7f81647f6b3b43be2e6251d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ingridientsList:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 878672503294021165, guid: c8b83b9ba1015466fba47e83f9cf5d60, type: 3}
+  - {fileID: 2262240634851324799, guid: 15879ac8fd4064e60b45180cc0425617, type: 3}
+  initialIngridientsToSpawn:
+  - {fileID: 67767494629356415, guid: c8b83b9ba1015466fba47e83f9cf5d60, type: 3}
+  - {fileID: 1169238253336316926, guid: 15879ac8fd4064e60b45180cc0425617, type: 3}
 --- !u!1 &736996632
 GameObject:
   m_ObjectHideFlags: 0

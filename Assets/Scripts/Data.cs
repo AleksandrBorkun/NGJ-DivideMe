@@ -5,7 +5,8 @@ public class Data
         UNSET,
         RICE,
         CURRY,
-        CAULIFLOWER
+        CAULIFLOWER,
+        BROCCOLI
     }
     
 }
