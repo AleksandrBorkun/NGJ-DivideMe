@@ -6,11 +6,10 @@ using UnityEngine.UI;
 public class Beerometer : MonoBehaviour
 {
     public float Decrement = 0.01f;
-    private Slider slider;
-    private Image fill;
     public Gradient gradient;
 
-
+    private Slider slider;
+    private Image fill;
 
     // Start is called before the first frame update
     void Start()
@@ -24,11 +23,4 @@ public class Beerometer : MonoBehaviour
         slider.value += value;
         fill.color = gradient.Evaluate(slider.normalizedValue);
     }
-
-    private void Update()
-    {
-        UpdateBeerometer(-Decrement * Time.deltaTime);
-    }
-
-
 }
