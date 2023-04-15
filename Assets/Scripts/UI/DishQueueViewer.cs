@@ -15,7 +15,9 @@ public class DishQueueViewer : MonoBehaviour
     public TextMeshProUGUI dishCounter;
     public Sprite defaultSprite;
     public string defaultText;
-    
+    public float TweenSpeed;
+    public Color invisible = new Color(255,255,255,0);
+    public Color visible = new Color(255,255,255,1);
 
     // Start is called before the first frame update
     void Start()
@@ -26,9 +28,11 @@ public class DishQueueViewer : MonoBehaviour
     }
     private void InitDishIconsDefaultValues()
     {
+        int i = 0;
         foreach (var dishIcon in DishIconList)
         {
             dishIcon.ChangeData(defaultSprite, defaultText);
+            SlideDishTileToLeft(dishIcon, i++);
         }
     }
 
@@ -48,6 +52,7 @@ public class DishQueueViewer : MonoBehaviour
             dishName = dish.DishName ?? defaultText;
             
             dishIcon.ChangeData(sprite, dishName);
+            SlideDishTileToLeft(dishIcon, i);
         }
     }
 
@@ -64,14 +69,19 @@ public class DishQueueViewer : MonoBehaviour
 
     public void DropDishTile()
     {
-        DishIconList[0].transform.DOMove(QueuePositions[0].position, 1);
+        DishIconList[0].transform.DOMove(QueuePositions[0].position, 1.5f).SetEase(Ease.OutQuad);
+       // DishIconList[0].Image.material.DOColor(invisible, TweenSpeed);
+
 
     }
 
-    private void SlideDishTileToLeft()
+    private void SlideDishTileToLeft(DishIcon dishIcon, int index)
     {
-
+        dishIcon.transform.DOMove(QueuePositions[index].position, 1.5f).SetEase(Ease.OutQuad);
+       // dishIcon.Image.material.DOColor(visible, TweenSpeed);
     }
+
+
 
 
 }

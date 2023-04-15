@@ -6,7 +6,8 @@ using TMPro;
 
 public class DishIcon : MonoBehaviour
 {
-    Image Image;
+    public Image Image { get; private set; }
+    public Image Background { get; private set; }
     TextMeshProUGUI Text;
 
     // Start is called before the first frame update
