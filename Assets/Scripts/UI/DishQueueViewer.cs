@@ -25,7 +25,6 @@ public class DishQueueViewer : MonoBehaviour
         dishCounter.text = "0";
     }
 
-
     public void SetDishIconsWith(List<Dish> dishes)
     {
         DishIcon dishIcon;
@@ -33,7 +32,7 @@ public class DishQueueViewer : MonoBehaviour
         string dishName;
         Sprite sprite;
 
-        for (int i = 0; i < dishes.Count; i++)
+        for (int i = 0; i < 3; i++)
         {
             dish = dishes[i];
             dishIcon = DishIconList[i].GetComponent<DishIcon>();
@@ -61,8 +60,6 @@ public class DishQueueViewer : MonoBehaviour
     {
         DishIconList[0].transform.DOMove(QueuePositions[0].position, 1.5f).SetEase(Ease.OutQuad);
        // DishIconList[0].Image.material.DOColor(invisible, TweenSpeed);
-
-
     }
 
     private void SlideDishTileToLeft(DishIcon dishIcon, int index)
