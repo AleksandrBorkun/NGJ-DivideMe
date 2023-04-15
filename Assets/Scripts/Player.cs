@@ -9,6 +9,7 @@ public class Player : MonoBehaviour
     public float drunkenness; // Between 0.0 and 1.0
 
     [SerializeField] SimpleSampleCharacterControl characterController;
+    [SerializeField] private AudioClip pickupAudioClip;
 
     // Start is called before the first frame update
     void Start()
@@ -46,9 +47,8 @@ public class Player : MonoBehaviour
         if (ingredient == null) { return; }
 
         inventory.inventory.Add(ingredient.ingridientName);
-
+        AudioSource.PlayClipAtPoint(pickupAudioClip, new Vector3(0, 0, 0));
         Destroy(other.gameObject);
-
         inventory.LogContents();
 
     }
