@@ -5,8 +5,8 @@ using UnityEngine;
 public class BeerBarrelController : MonoBehaviour
 {
 
-    public float normalDrinkSpeed = .05f;
-    public float drunkDrinkSpeed = .08f;
+    public float normalDrinkSpeed = .1f;
+    public float drunkDrinkSpeed = .15f;
     // Start is called before the first frame update
     void Start()
     {
@@ -24,7 +24,7 @@ public class BeerBarrelController : MonoBehaviour
 
         var player = collision.gameObject.GetComponent<Player>();
 
-        if (player && player.drunkenness < 0.8)
+        if (player && player.drunkenness < 0.7)
         {
             Debug.Log("drinking...");
             player.drunkenness += normalDrinkSpeed * Time.deltaTime;

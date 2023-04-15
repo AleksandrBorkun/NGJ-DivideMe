@@ -44,8 +44,11 @@ public class IngridientsSpawner : MonoBehaviour
         {
             int spawnPoint = Random.Range(0, fakeKids.Count);
             Data.Ingridients ingridient;
-            //while (!spawnPoints.TryGetValue(spawnPoint, out ingridient))
+
+
+            //while (!spawnPoints.TryGetValue(i, out ingridient))
             //{
+            //    Debug.Log("hit infinity");
             //    spawnPoint = Random.Range(0, transform.childCount);
             //}
 

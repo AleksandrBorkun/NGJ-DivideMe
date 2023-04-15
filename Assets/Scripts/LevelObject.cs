@@ -8,4 +8,5 @@ public class LevelObject : ScriptableObject
     public int numberOfDishes;
     public Dish[] dishes;
     public int levelSpeed = 3;
+    public int time;
 }
