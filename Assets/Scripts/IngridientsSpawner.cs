@@ -6,14 +6,14 @@ public class IngridientsSpawner : MonoBehaviour
     
     public GameObject[] ingridientsList;
 
-    public Ingridient[] initialIngridientsToSpawn;
+    public Data.Ingridients[] initialIngridientsToSpawn;
 
     private void Start()
     {
         SpawnNext(initialIngridientsToSpawn);
     }
 
-    public void SpawnNext(Ingridient[] ingridients)
+    public void SpawnNext(Data.Ingridients[] ingridients)
     {
 
         Dictionary<int, Data.Ingridients> spawnPoints = new Dictionary<int, Data.Ingridients>();
@@ -30,7 +30,7 @@ public class IngridientsSpawner : MonoBehaviour
             //    spawnPoint = Random.Range(0, transform.childCount);
             //}
 
-            ingridient = ingridients[i].ingridientName;
+            ingridient = ingridients[i];
             spawnPoints.Add(spawnPoint, ingridient);
 
         }
