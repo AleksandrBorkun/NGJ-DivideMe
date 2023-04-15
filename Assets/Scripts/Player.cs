@@ -4,17 +4,37 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    [SerializeField]
-    Inventory inventory;
+    [SerializeField] Inventory inventory;
+
+    public float drunkenness; // Between 0.0 and 1.0
+
+    [SerializeField] SimpleSampleCharacterControl characterController;
 
     // Start is called before the first frame update
     void Start()
     {
-
     }
 
     // Update is called once per frame
     void Update()
+    {
+        ModifyMoveSpeed();
+    }
+
+    private void ModifyMoveSpeed()
+    {
+        if (drunkenness < 0.3f)
+        {
+            // walk slower
+            characterController.moveSpeedModifier = 0.5f;
+        }
+        else
+        {
+            characterController.moveSpeedModifier = 1f;
+        }
+    }
+
+    void PlayerUpdate()
     {
 
     }

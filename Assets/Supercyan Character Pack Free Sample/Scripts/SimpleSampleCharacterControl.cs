@@ -15,6 +15,7 @@ public class SimpleSampleCharacterControl : MonoBehaviour
         Direct
     }
 
+    public float moveSpeedModifier = 1f;
     [SerializeField] private float m_moveSpeed = 2;
     [SerializeField] private float m_turnSpeed = 200;
     [SerializeField] private float m_jumpForce = 4;
@@ -190,7 +191,7 @@ public class SimpleSampleCharacterControl : MonoBehaviour
             m_currentDirection = Vector3.Slerp(m_currentDirection, direction, Time.deltaTime * m_interpolation);
 
             transform.rotation = Quaternion.LookRotation(m_currentDirection);
-            transform.position += m_currentDirection * m_moveSpeed * Time.deltaTime;
+            transform.position += m_currentDirection * m_moveSpeed * Time.deltaTime * moveSpeedModifier;
 
             m_animator.SetFloat("MoveSpeed", direction.magnitude);
         }
