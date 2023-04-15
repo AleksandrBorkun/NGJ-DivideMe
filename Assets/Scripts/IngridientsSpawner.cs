@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class IngridientsSpawner : MonoBehaviour
@@ -42,7 +43,7 @@ public class IngridientsSpawner : MonoBehaviour
 
         for (int i = 0; i < ingridients.Length; i++)
         {
-            int spawnPoint = Random.Range(0, fakeKids.Count);
+            int spawnPoint = Random.Range(fakeKids.First(), fakeKids.Count);
             Data.Ingridients ingridient;
 
 
