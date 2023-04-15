@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -123,6 +123,120 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1001 &510098390
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 538878689388926103, guid: c8b83b9ba1015466fba47e83f9cf5d60, type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 538878689388926103, guid: c8b83b9ba1015466fba47e83f9cf5d60, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.3716621
+      objectReference: {fileID: 0}
+    - target: {fileID: 538878689388926103, guid: c8b83b9ba1015466fba47e83f9cf5d60, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 538878689388926103, guid: c8b83b9ba1015466fba47e83f9cf5d60, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -2.4410703
+      objectReference: {fileID: 0}
+    - target: {fileID: 538878689388926103, guid: c8b83b9ba1015466fba47e83f9cf5d60, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 538878689388926103, guid: c8b83b9ba1015466fba47e83f9cf5d60, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 538878689388926103, guid: c8b83b9ba1015466fba47e83f9cf5d60, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 538878689388926103, guid: c8b83b9ba1015466fba47e83f9cf5d60, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 538878689388926103, guid: c8b83b9ba1015466fba47e83f9cf5d60, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 538878689388926103, guid: c8b83b9ba1015466fba47e83f9cf5d60, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 538878689388926103, guid: c8b83b9ba1015466fba47e83f9cf5d60, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 878672503294021165, guid: c8b83b9ba1015466fba47e83f9cf5d60, type: 3}
+      propertyPath: m_Name
+      value: cauliflower (2)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: c8b83b9ba1015466fba47e83f9cf5d60, type: 3}
+--- !u!1001 &1149931357
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 538878689388926103, guid: c8b83b9ba1015466fba47e83f9cf5d60, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 538878689388926103, guid: c8b83b9ba1015466fba47e83f9cf5d60, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1.14
+      objectReference: {fileID: 0}
+    - target: {fileID: 538878689388926103, guid: c8b83b9ba1015466fba47e83f9cf5d60, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 538878689388926103, guid: c8b83b9ba1015466fba47e83f9cf5d60, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -2.4410703
+      objectReference: {fileID: 0}
+    - target: {fileID: 538878689388926103, guid: c8b83b9ba1015466fba47e83f9cf5d60, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 538878689388926103, guid: c8b83b9ba1015466fba47e83f9cf5d60, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 538878689388926103, guid: c8b83b9ba1015466fba47e83f9cf5d60, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 538878689388926103, guid: c8b83b9ba1015466fba47e83f9cf5d60, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 538878689388926103, guid: c8b83b9ba1015466fba47e83f9cf5d60, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 538878689388926103, guid: c8b83b9ba1015466fba47e83f9cf5d60, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 538878689388926103, guid: c8b83b9ba1015466fba47e83f9cf5d60, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 878672503294021165, guid: c8b83b9ba1015466fba47e83f9cf5d60, type: 3}
+      propertyPath: m_Name
+      value: cauliflower (1)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: c8b83b9ba1015466fba47e83f9cf5d60, type: 3}
 --- !u!1001 &1309840555
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -195,5 +309,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c8f245a17100cd543bc19edcb3bd7e7a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inventory: {fileID: 1309840563}
+--- !u!114 &1309840563
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1309840556}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 39a9443ce12f27d45b143f449f38b8af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
