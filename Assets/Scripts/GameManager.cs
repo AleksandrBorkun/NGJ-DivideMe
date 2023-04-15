@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
@@ -13,6 +14,7 @@ public class GameManager : MonoBehaviour
     private OvenController oven;
     private Player player;
     private Beerometer beerometer;
+    private DishQueueViewer dishQueueViewer;
 
     private IngridientsSpawner ingridientsSpawner;
 
@@ -53,6 +55,9 @@ public class GameManager : MonoBehaviour
         //find beerometer
         beerometer = FindObjectOfType<Beerometer>();
 
+        dishQueueViewer = FindObjectOfType<DishQueueViewer>();
+
+        dishQueueViewer.SetDishIconsWith(currentLevel.dishes.ToList());
 
         Debug.Log("Game Manager Comlete Setting up level on start");
     }
