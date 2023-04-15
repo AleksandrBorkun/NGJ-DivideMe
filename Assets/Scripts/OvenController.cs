@@ -36,7 +36,7 @@ public class OvenController : MonoBehaviour
                 inventoryObj.inventory.Remove(ingridient);
             }
 
-
+            GameManager.Instance.SetupNextDish();
         }
     }
 }
