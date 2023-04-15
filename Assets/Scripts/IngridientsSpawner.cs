@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class IngridientsSpawner : MonoBehaviour
 {
-    
+
     public GameObject[] ingridientsList;
 
     public Data.Ingridients[] initialIngridientsToSpawn;
@@ -21,9 +21,28 @@ public class IngridientsSpawner : MonoBehaviour
         // find random position for each ingridient
         // makking sure that this position is not taken
         Debug.Log("find random position for each ingridient");
-        for(int i = 0; i< ingridients.Length; i++)
+
+        // New list of all possible spawnpoints:
+        List<int> fakeKids = new List<int>();
+        for (int i = 0; i < transform.childCount; i++)
         {
-            int spawnPoint = Random.Range(0, transform.childCount);
+            fakeKids.Add(i);
+        }
+
+
+        // for (int i = 0; i < ingridients.Length; i++)
+        // {
+        //     int r = Random.Range(0, s.Count);
+        //     Data.Ingridients ingridient;
+
+        //     ingridient = ingridients[i];
+        //     spawnPoints.Add(spawnPoint, ingridient);
+
+        // }
+
+        for (int i = 0; i < ingridients.Length; i++)
+        {
+            int spawnPoint = Random.Range(0, fakeKids.Count);
             Data.Ingridients ingridient;
             //while (!spawnPoints.TryGetValue(spawnPoint, out ingridient))
             //{
@@ -32,7 +51,7 @@ public class IngridientsSpawner : MonoBehaviour
 
             ingridient = ingridients[i];
             spawnPoints.Add(spawnPoint, ingridient);
-
+            fakeKids.Remove(spawnPoint);
         }
 
         Debug.Log("spawn ingridients");
