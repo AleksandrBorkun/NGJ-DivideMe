@@ -26,8 +26,13 @@ public class Player : MonoBehaviour
     {
         if (drunkenness < 0.3f)
         {
-            // walk slower
+            // TODO On screen message: Too sober. Boring!
             characterController.moveSpeedModifier = 0.5f;
+        }
+        else if (drunkenness > 0.8f)
+        {
+            // TODO: On screen message: Too drunk! Wtf!
+            characterController.moveSpeedModifier = 4f;
         }
         else
         {
