@@ -56,7 +56,7 @@ public class GameManager : MonoBehaviour
 
         dishQueueViewer = FindObjectOfType<DishQueueViewer>();
 
-        dishQueueViewer.SetDishIconsAtGameStart(currentLevel.dishes.ToList());
+        dishQueueViewer.SetDishIconsAtLevelStart(currentLevel.dishes.ToList());
 
         Debug.Log("Game Manager Comlete Setting up level on start");
     }

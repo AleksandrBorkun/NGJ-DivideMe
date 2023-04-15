@@ -32,7 +32,7 @@ public class DishQueueViewer : MonoBehaviour
         dishCounter.text = remainingDishes.ToString();
     }
 
-    public void SetDishIconsAtGameStart(List<Dish> dishes)
+    public void SetDishIconsAtLevelStart(List<Dish> dishes)
     {
         DishIcon dishIcon;
         Dish dish;
@@ -57,7 +57,8 @@ public class DishQueueViewer : MonoBehaviour
     public void OnDishCompleted()
     {
         var dish = DishIconList[0];
-        dish.transform.DOMove(Vector3.down * 100, 1.5f).SetEase(Ease.OutQuad);
+        var dropPosition = QueuePositions[QueuePositions.Count - 1];
+        dish.transform.DOMove(dropPosition.position, 1.5f).SetEase(Ease.OutQuad);
         DishIconList.RemoveAt(0);
         DishIconList.Add(dish);
     }
@@ -68,7 +69,6 @@ public class DishQueueViewer : MonoBehaviour
         var dishIcon = DishIconList[lastIndex].GetComponent<DishIcon>();
         dishIcon.ChangeData(newDish.sprite, newDish.DishName);
     }
-
 
     private void SlideDishTileToLeft(DishIcon dishIcon, int index)
     {
