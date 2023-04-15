@@ -56,7 +56,9 @@ public class GameManager : MonoBehaviour
 
         dishQueueViewer = FindObjectOfType<DishQueueViewer>();
 
+
         dishQueueViewer.SetDishIconsAtLevelStart(currentLevel.dishes.ToList());
+        dishQueueViewer.UpdateCounter(currentLevel.dishes.Length);
 
         Debug.Log("Game Manager Comlete Setting up level on start");
     }
@@ -72,18 +74,27 @@ public class GameManager : MonoBehaviour
     public void SetupNextDish()
     {
         currentDishIndex++;
+        dishQueueViewer.OnDishCompleted();
 
         // check if next level should be triggered
-        if(currentDishIndex >= currentLevel.dishes.Length)
+        if (currentDishIndex >= currentLevel.dishes.Length)
         {
             currentLevelIndex++;
             currentDishIndex = 0;
-            //dishQueueViewer.SetDishIconsWith(currentLevel.dishes.ToList());
+            currentLevel = levelObjects[currentLevelIndex];
+            dishQueueViewer.SetDishIconsAtLevelStart(currentLevel.dishes.ToList());
+        }
+        else
+        {
+            if(currentDishIndex + 2 < currentLevel.dishes.Length)
+            {
+                dishQueueViewer.DisplayNewDish(currentLevel.dishes[currentDishIndex + 2]);
+            }
         }
 
-        currentLevel = levelObjects[currentLevelIndex];
         currentDish = currentLevel.dishes[currentDishIndex];
 
+        dishQueueViewer.UpdateCounter(currentLevel.dishes.Length - currentDishIndex);
 
         ingridientsSpawner.SpawnNext(currentDish.GetRecipe());
         oven.SetDish(currentDish);

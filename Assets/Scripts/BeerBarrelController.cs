@@ -26,10 +26,12 @@ public class BeerBarrelController : MonoBehaviour
 
         if (player && player.drunkenness < 0.8)
         {
+            Debug.Log("drinking...");
             player.drunkenness += normalDrinkSpeed * Time.deltaTime;
         }
         else if(player && player.drunkenness < .99)
         {
+            Debug.Log("drinking...");
             player.drunkenness += drunkDrinkSpeed * Time.deltaTime;
         }
         else
