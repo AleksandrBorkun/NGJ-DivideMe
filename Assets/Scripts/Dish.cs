@@ -5,9 +5,9 @@ public class Dish : MonoBehaviour
 {
 
     [SerializeField]
-    private Ingridient[] ingridients;
+    private Data.Ingridients[] ingridients;
 
-    public Ingridient[] GetRecipe()
+    public Data.Ingridients[] GetRecipe()
     {
         return ingridients;
     }
