@@ -4,7 +4,12 @@ using UnityEngine;
 
 public class OvenController : MonoBehaviour
 {
-    public Dish currentDish;
+    private Dish currentDish;
+
+    public void SetDish(Dish dish)
+    {
+        currentDish = dish;
+    }
 
     private void OnCollisionEnter(Collision collision)
     {

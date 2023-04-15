@@ -8,10 +8,10 @@ public class IngridientsSpawner : MonoBehaviour
 
     public Data.Ingridients[] initialIngridientsToSpawn;
 
-    private void Start()
-    {
-        SpawnNext(initialIngridientsToSpawn);
-    }
+    //private void Start()
+    //{
+    //    SpawnNext(initialIngridientsToSpawn);
+    //}
 
     public void SpawnNext(Data.Ingridients[] ingridients)
     {
