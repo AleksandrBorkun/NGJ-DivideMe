@@ -5,8 +5,8 @@ using UnityEngine;
 public class BeerBarrelController : MonoBehaviour
 {
 
-    public float normalDrinkSpeed = .02f;
-    public float drunkDrinkSpeed = .05f;
+    public float normalDrinkSpeed = .05f;
+    public float drunkDrinkSpeed = .08f;
     // Start is called before the first frame update
     void Start()
     {

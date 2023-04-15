@@ -49,7 +49,6 @@ public class GameManager : MonoBehaviour
         oven.SetDish(currentDish);
 
         // get player
-
         player = FindObjectOfType<Player>();
 
         //find beerometer
@@ -79,10 +78,12 @@ public class GameManager : MonoBehaviour
         {
             currentLevelIndex++;
             currentDishIndex = 0;
+            //dishQueueViewer.SetDishIconsWith(currentLevel.dishes.ToList());
         }
 
         currentLevel = levelObjects[currentLevelIndex];
         currentDish = currentLevel.dishes[currentDishIndex];
+
 
         ingridientsSpawner.SpawnNext(currentDish.GetRecipe());
         oven.SetDish(currentDish);

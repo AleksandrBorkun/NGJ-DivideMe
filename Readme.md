@@ -1,17 +1,15 @@
-# Divide Me
+# BeerCook
 
-it's a isometric/puzzle game (could be voxel world in a small neighborhood)
+We are trying to come up with an idea for a game at a game jam. We have less than 48 hours to finish it. Our given theme consist of three random things: "beer", "curry" and "creativity". Can you help coming up with a simple game idea?
 
-The idea is that first you create you character , select skills and abiliy and in general budig your avatar
+Sure! How about a game called "Brew & Spice Studio" where players take on the role of a chef in a bustling restaurant kitchen trying to create the perfect curry dish. The catch is that the chef's creativity is fueled by beer, and players must manage their beer level to maintain their creative flow.
 
-And then game started, you might be go for a walk or whatever, and you being kidnapped by aliens. But they small. And so the decided to split you on small pieces. Each piece of you have some uniq ability or skill.
-Since now you mecame a mess of small pieces aliens don't know how to investigate you. So the decided to put you back, and before they do, that instruct you that you can became you real shape again when you xolloect all your parts.
+The game could be a time-based puzzle game where players must complete various stages of curry preparation, such as chopping vegetables, mixing spices, and cooking the curry, all while managing their beer level. Too little beer, and the chef's creativity wanes, resulting in a poorly executed dish. Too much beer, and the chef's coordination and decision-making skills are impaired, leading to mistakes and a lower score.
 
-So you sent back, I'm buch of small pieces spread on a map. And your mission is to collect yourself again
+Players could earn points based on the quality of the dish they prepare, with bonuses for creativity and speed. As the game progresses, players could unlock new recipes, spices, and beer types to experiment with, adding variety and replayability to the game.
 
-## Limitations:
+To add a competitive element, you could also include a multiplayer mode where players compete against each other in real-time, trying to create the best curry dish while managing their beer levels and racing against the clock.
 
-Parts controlled by "brain"
-"Brain power" is how many parts you can controll at a time (can represent number of players)
+The game could have colorful graphics, fun sound effects, and a catchy soundtrack to create an engaging and immersive experience for players. With a simple and intuitive control scheme, it could be easily accessible and enjoyable for players of all skill levels.
 
-When part is not controlled it can randomly moved by map, so you need to make sure to lock it somehow
+Overall, "Beer Cook" could be a lighthearted and quirky game that combines elements of time management, puzzle-solving, and culinary creativity, making it a unique and entertaining entry for your game jam!
