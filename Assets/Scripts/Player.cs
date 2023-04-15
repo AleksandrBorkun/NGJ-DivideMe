@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    [SerializeField]
+    Inventory inventory;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -18,6 +21,15 @@ public class Player : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+
+        var ingredient = other.gameObject.GetComponent<Ingridient>();
+        if (ingredient == null) { return; }
+
+        inventory.AddIngredient(ingredient.ingridientName);
+
         Destroy(other.gameObject);
+
+        inventory.LogContents();
+
     }
 }
