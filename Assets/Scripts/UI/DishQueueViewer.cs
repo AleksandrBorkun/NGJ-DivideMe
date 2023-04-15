@@ -68,6 +68,11 @@ public class DishQueueViewer : MonoBehaviour
         var lastIndex = DishIconList.Count - 1;
         var dishIcon = DishIconList[lastIndex].GetComponent<DishIcon>();
         dishIcon.ChangeData(newDish.sprite, newDish.DishName);
+
+        foreach(DishIcon item in DishIconList)
+        {
+            SlideDishTileToLeft(dishIcon, DishIconList.IndexOf(item));
+        }
     }
 
     private void SlideDishTileToLeft(DishIcon dishIcon, int index)
