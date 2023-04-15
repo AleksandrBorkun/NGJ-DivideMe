@@ -25,7 +25,7 @@ public class Player : MonoBehaviour
         var ingredient = other.gameObject.GetComponent<Ingridient>();
         if (ingredient == null) { return; }
 
-        inventory.AddIngredient(ingredient.ingridientName);
+        inventory.inventory.Add(ingredient.ingridientName);
 
         Destroy(other.gameObject);
 

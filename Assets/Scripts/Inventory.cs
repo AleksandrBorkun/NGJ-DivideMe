@@ -5,17 +5,7 @@ using UnityEngine;
 public class Inventory : MonoBehaviour
 {
 
-    List<Data.Ingridients> inventory;
-
-    public void AddIngredient(Data.Ingridients ingridientToAdd)
-    {
-        inventory.Add(ingridientToAdd);
-    }
-
-    public void RemoveIngredient(Data.Ingridients ingridientToRemove)
-    {
-        inventory.Remove(ingridientToRemove);
-    }
+    public List<Data.Ingridients> inventory;
 
     public void LogContents()
     {
