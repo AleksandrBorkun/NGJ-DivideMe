@@ -7,14 +7,15 @@ public class GameManager : MonoBehaviour
     public LevelObject[] levelObjects;
 
     private LevelObject currentLevel;
+    private int currentLevelIndex = 0;
     private Dish currentDish;
+    private int currentDishIndex = 0;
     private OvenController oven;
     private Player player;
     private Beerometer beerometer;
 
     private IngridientsSpawner ingridientsSpawner;
 
-    private int frameCount = 0;
 
     public static GameManager Instance { get; private set; }
     private void Awake()
@@ -35,8 +36,8 @@ public class GameManager : MonoBehaviour
     {
 
         Debug.Log("Game Manager Setting up level on start");
-        currentLevel = levelObjects[0];
-        currentDish = currentLevel.dishes[0];
+        currentLevel = levelObjects[currentLevelIndex];
+        currentDish = currentLevel.dishes[currentDishIndex];
         // Spawn Ingridients
         ingridientsSpawner = FindObjectOfType<IngridientsSpawner>();
         ingridientsSpawner.SpawnNext(currentDish.GetRecipe());
@@ -59,13 +60,26 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-        frameCount++;
-        player.drunkenness -= .01f * Time.deltaTime * currentLevel.levelSpeed;
-        Debug.Log(player.drunkenness);
+        player.drunkenness -= .005f * Time.deltaTime * currentLevel.levelSpeed;
         beerometer.UpdateBeerometer(player.drunkenness);
-        if(player.drunkenness <= 0)
-        {
 
+    }
+
+    public void SetupNextDish()
+    {
+        currentDishIndex++;
+
+        // check if next level should be triggered
+        if(currentDishIndex >= currentLevel.dishes.Length)
+        {
+            currentLevelIndex++;
+            currentDishIndex = 0;
         }
+
+        currentLevel = levelObjects[currentLevelIndex];
+        currentDish = currentLevel.dishes[currentDishIndex];
+
+        ingridientsSpawner.SpawnNext(currentDish.GetRecipe());
+        oven.SetDish(currentDish);
     }
 }
