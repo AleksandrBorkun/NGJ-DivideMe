@@ -3,12 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
+using DG.Tweening;
 
 public class DishQueueViewer : MonoBehaviour
 {
     //tween to move ui to the left
     //tween to drop dish mqde or failed
     public List<DishIcon> DishIconList;
+    public List<Transform> QueuePositions;
 
     public TextMeshProUGUI dishCounter;
     public Sprite defaultSprite;
@@ -20,9 +22,9 @@ public class DishQueueViewer : MonoBehaviour
     {
         dishCounter.text = "0";
         InitDishIconsDefaultValues();
+        DropDishTile();
     }
-
-    public void InitDishIconsDefaultValues()
+    private void InitDishIconsDefaultValues()
     {
         foreach (var dishIcon in DishIconList)
         {
@@ -33,9 +35,19 @@ public class DishQueueViewer : MonoBehaviour
     public void SetDishIconsWith(List<Dish> dishes)
     {
         DishIcon dishIcon;
+        Dish dish;
+        string dishName;
+        Sprite sprite;
+
         for (int i = 0; i < dishes.Count; i++)
         {
+            dish = dishes[i];
             dishIcon = DishIconList[i].GetComponent<DishIcon>();
+
+            sprite = dish.sprite ?? defaultSprite;
+            dishName = dish.DishName ?? defaultText;
+            
+            dishIcon.ChangeData(sprite, dishName);
         }
     }
 
@@ -52,6 +64,7 @@ public class DishQueueViewer : MonoBehaviour
 
     public void DropDishTile()
     {
+        DishIconList[0].transform.DOMove(QueuePositions[0].position, 1);
 
     }
 
