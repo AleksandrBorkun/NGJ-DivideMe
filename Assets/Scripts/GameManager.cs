@@ -74,7 +74,7 @@ public class GameManager : MonoBehaviour
     public void SetupNextDish()
     {
         currentDishIndex++;
-        dishQueueViewer.OnDishCompleted();
+        //dishQueueViewer.OnDishCompleted();
 
         // check if next level should be triggered
         if (currentDishIndex >= currentLevel.dishes.Length)
