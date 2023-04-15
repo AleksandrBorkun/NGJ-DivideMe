@@ -10,7 +10,7 @@ public class GameManager : MonoBehaviour
 
     private LevelObject currentLevel;
     private int currentLevelIndex = 0;
-    private Dish currentDish;
+    public Dish currentDish;
     private int currentDishIndex = 0;
     private OvenController oven;
     private Player player;
@@ -36,43 +36,43 @@ public class GameManager : MonoBehaviour
         {
             Instance = this;
         }
+
+        
+
+    }
+
+    // should find all the objects here
+    private void OnStart()
+    {
+        ingridientsSpawner = FindObjectOfType<IngridientsSpawner>();
+        //find beerometer
+        beerometer = FindObjectOfType<Beerometer>();
+        // get player
+        player = FindObjectOfType<Player>();
+        dishQueueViewer = FindObjectOfType<DishQueueViewer>();
+        timer = FindObjectOfType<Timer>();
+
+        timerText = timer.GetComponentInChildren<TextMeshProUGUI>();
+        Debug.Log("Game Manager Comlete Setting up level on awake");
     }
 
     private void Start()
     {
-
-        Debug.Log("Game Manager Setting up level on start");
+        OnStart();
         currentLevel = levelObjects[currentLevelIndex];
         currentDish = currentLevel.dishes[currentDishIndex];
         // Spawn Ingridients
-        ingridientsSpawner = FindObjectOfType<IngridientsSpawner>();
         ingridientsSpawner.SpawnNext(currentDish.GetRecipe());
-
-        // Udate Oven with Current Dish
-        oven = FindObjectOfType<OvenController>();
-        oven.SetDish(currentDish);
-
-        // get player
-        player = FindObjectOfType<Player>();
-
-        //find beerometer
-        beerometer = FindObjectOfType<Beerometer>();
-
-        dishQueueViewer = FindObjectOfType<DishQueueViewer>();
-
-
+        // call UI API
         dishQueueViewer.SetDishIconsAtLevelStart(currentLevel.dishes.ToList());
         dishQueueViewer.UpdateCounter(currentLevel.dishes.Length);
 
-        timer = FindObjectOfType<Timer>();
-        timerText = timer.GetComponentInChildren<TextMeshProUGUI>();
-
-        Debug.Log("Game Manager Comlete Setting up level on start");
     }
 
 
     private void Update()
     {
+        if (!(player && timerText && beerometer)) return;
         player.drunkenness -= .005f * Time.deltaTime * currentLevel.levelSpeed;
         beerometer.UpdateBeerometer(player.drunkenness);
 
@@ -115,6 +115,5 @@ public class GameManager : MonoBehaviour
         dishQueueViewer.UpdateCounter(currentLevel.dishes.Length - currentDishIndex);
 
         ingridientsSpawner.SpawnNext(currentDish.GetRecipe());
-        oven.SetDish(currentDish);
     }
 }

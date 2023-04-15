@@ -4,15 +4,10 @@ using UnityEngine;
 
 public class OvenController : MonoBehaviour
 {
-    private Dish currentDish;
-
-    public void SetDish(Dish dish)
-    {
-        currentDish = dish;
-    }
 
     private void OnCollisionEnter(Collision collision)
     {
+        Dish currentDish = GameManager.Instance.currentDish;
         Inventory inventoryObj = collision.gameObject.GetComponent<Inventory>();
         if (!inventoryObj) return;
         bool isAllIngridientsCollected = true;
