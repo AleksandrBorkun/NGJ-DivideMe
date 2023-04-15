@@ -23,18 +23,8 @@ public class DishQueueViewer : MonoBehaviour
     void Start()
     {
         dishCounter.text = "0";
-        InitDishIconsDefaultValues();
-        DropDishTile();
     }
-    private void InitDishIconsDefaultValues()
-    {
-        int i = 0;
-        foreach (var dishIcon in DishIconList)
-        {
-            dishIcon.ChangeData(defaultSprite, defaultText);
-            SlideDishTileToLeft(dishIcon, i++);
-        }
-    }
+
 
     public void SetDishIconsWith(List<Dish> dishes)
     {
