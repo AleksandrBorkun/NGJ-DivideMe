@@ -23,7 +23,7 @@ public class GameManager : MonoBehaviour
     private DishQueueViewer dishQueueViewer;
 
     private IngridientsSpawner ingridientsSpawner;
-    float timeLeft = 6.0f;
+    float timeLeft = 60.0f;
     Timer timer;
     TextMeshProUGUI timerText;
     GameOverCanvas gameOverCanvas;
