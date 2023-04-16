@@ -60,11 +60,12 @@ public class DishQueueViewer : MonoBehaviour
     }
     public async Task DropDishIcon(Dish newDish)
     {
-        var dish = DishIconList[0];
-        await dish.transform.DOMove(DropPositions[0].position, 1f).SetEase(Ease.OutQuad).AsyncWaitForCompletion();
+        var dishIcon = DishIconList[0];
+        await dishIcon.transform.DOMove(DropPositions[0].position, 1f).SetEase(Ease.OutQuad).AsyncWaitForCompletion();
         DishIconList.RemoveAt(0);
-        DishIconList.Add(dish);
-        dish.transform.position = DropPositions[1].position;
+        DishIconList.Add(dishIcon);
+        dishIcon.transform.position = DropPositions[1].position;
+        dishIcon.enabled = false;
     }
 
     public void DisplayNewDish(Dish newDish)
@@ -74,6 +75,7 @@ public class DishQueueViewer : MonoBehaviour
 
         var lastIndex = DishIconList.Count - 1;
         var dishIcon = DishIconList[lastIndex].GetComponent<DishIcon>();
+        dishIcon.enabled = true;
         dishIcon.ChangeData(newDish.sprite, newDish.DishName);
 
         SlideDishTileToLeft(DishIconList[2], 2, TweenSpeed);
