@@ -92,7 +92,8 @@ public class GameManager : MonoBehaviour
 
     private void GameOver()
     {
-        //Time.timeScale = 0;
+
+        // Time.timeScale = 0;
         // Get player controller and disable it
 
     }
