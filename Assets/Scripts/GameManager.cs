@@ -29,6 +29,7 @@ public class GameManager : MonoBehaviour
     GameOverCanvas gameOverCanvas;
     bool isGameOver = false;
     [SerializeField] private AudioClip gameOverAudioClip;
+    int currentScore = 0;
 
     public static GameManager Instance { get; private set; }
     private void Awake()
@@ -107,21 +108,26 @@ public class GameManager : MonoBehaviour
     {
         isGameOver = true;
         gameOverCanvas.transform.GetChild(0).gameObject.SetActive(true);
+
         AudioSource.PlayClipAtPoint(gameOverAudioClip, new Vector3(0, 0, 0));
 
         player.GetComponent<SimpleSampleCharacterControl>().gameObject.SetActive(false);
+        var t = gameOverCanvas.transform.GetChild(0).GetChild(3).GetComponent<TextMeshProUGUI>();
+        t.text = currentScore.ToString();
 
     }
 
     public async void SetupNextDish()
     {
         currentDishIndex++;
-        UIApi.IncrementPointsCounterOf(15);
+
         //dishQueueViewer.OnDishCompleted();
 
         // check if next level should be triggered
         if (currentDishIndex >= currentLevel.dishes.Length)
         {
+            UIApi.IncrementPointsCounterOf(30);
+            currentScore += 30;
             timeLeft += 15;
             currentLevelIndex++;
             currentDishIndex = 0;
@@ -132,6 +138,8 @@ public class GameManager : MonoBehaviour
         }
         else
         {
+            UIApi.IncrementPointsCounterOf(15);
+            currentScore += 15;
             timeLeft += 5;
             if (currentDishIndex + 2 < currentLevel.dishes.Length)
             {
