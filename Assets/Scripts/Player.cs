@@ -10,6 +10,8 @@ public class Player : MonoBehaviour
 
     [SerializeField] SimpleSampleCharacterControl characterController;
     [SerializeField] private AudioClip pickupAudioClip;
+    [SerializeField] private AudioClip yawnAudioClip;
+    [SerializeField] private AudioClip drunkAudioClip;
 
 
     public GameObject tooDrunkEffect;
@@ -39,6 +41,7 @@ public class Player : MonoBehaviour
             {
                 isDryTriggered = true;
                 Instantiate(tooDryEffect, GameManager.Instance.gameObject.transform);
+                AudioSource.PlayClipAtPoint(yawnAudioClip, new Vector3(0, 0, 0));
             }
             characterController.moveSpeedModifier = 0.5f;
         }
@@ -49,6 +52,7 @@ public class Player : MonoBehaviour
             {
                 isDrunkTriggered = true;
                 Instantiate(tooDrunkEffect, GameManager.Instance.gameObject.transform);
+                AudioSource.PlayClipAtPoint(drunkAudioClip, new Vector3(0, 0, 0));
             }
             characterController.moveSpeedModifier = 4f;
         }

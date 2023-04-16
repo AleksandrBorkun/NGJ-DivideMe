@@ -27,6 +27,7 @@ public class GameManager : MonoBehaviour
     TextMeshProUGUI timerText;
     GameOverCanvas gameOverCanvas;
     bool isGameOver = false;
+    [SerializeField] private AudioClip gameOverAudioClip;
 
     public static GameManager Instance { get; private set; }
     private void Awake()
@@ -100,6 +101,8 @@ public class GameManager : MonoBehaviour
     {
         isGameOver = true;
         gameOverCanvas.transform.GetChild(0).gameObject.SetActive(true);
+        AudioSource.PlayClipAtPoint(gameOverAudioClip, new Vector3(0, 0, 0));
+
         //Get player controller and disable it
 
     }
