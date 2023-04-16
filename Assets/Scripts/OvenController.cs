@@ -36,6 +36,7 @@ public class OvenController : MonoBehaviour
 
             GameManager.Instance.SetupNextDish();
             Instantiate(smokeEffect, transform);
+            collision.gameObject.GetComponent<Player>().PlayCookingSound();
         }
     }
 }

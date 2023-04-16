@@ -331,6 +331,7 @@ MonoBehaviour:
   pickupAudioClip: {fileID: 8300000, guid: 82bc767951912e047bea037b0c3111ea, type: 3}
   yawnAudioClip: {fileID: 8300000, guid: b1d2e5fdb66543e46b5460b1112fa79c, type: 3}
   drunkAudioClip: {fileID: 8300000, guid: 2d23d5993f232ac4d97de41e743f922e, type: 3}
+  cookingAudioClip: {fileID: 8300000, guid: 67b4905b0b1fc7042991ea8404e75fde, type: 3}
   tooDrunkEffect: {fileID: 2329724739178309570, guid: a6ec42be172fd4830a6f3f27d736c9eb, type: 3}
   tooDryEffect: {fileID: 5905594366625282080, guid: ed4edda3f801443f791d987edbae0d7f, type: 3}
 --- !u!114 &1309840558 stripped

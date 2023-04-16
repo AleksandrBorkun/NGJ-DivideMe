@@ -12,6 +12,7 @@ public class Player : MonoBehaviour
     [SerializeField] private AudioClip pickupAudioClip;
     [SerializeField] private AudioClip yawnAudioClip;
     [SerializeField] private AudioClip drunkAudioClip;
+    [SerializeField] private AudioClip cookingAudioClip;
 
 
     public GameObject tooDrunkEffect;
@@ -29,6 +30,12 @@ public class Player : MonoBehaviour
     void Update()
     {
         ModifyMoveSpeed();
+    }
+
+
+    public void PlayCookingSound()
+    {
+        AudioSource.PlayClipAtPoint(cookingAudioClip, new Vector3(0, 0, 0));
     }
 
     private void ModifyMoveSpeed()
