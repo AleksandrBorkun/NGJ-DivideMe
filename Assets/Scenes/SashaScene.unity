@@ -7522,6 +7522,8 @@ MonoBehaviour:
   levelObjects:
   - {fileID: 11400000, guid: a86f58b848c3847388f854dbdb851533, type: 2}
   - {fileID: 11400000, guid: 9bbf577f8ee2a4046803b92cd2955985, type: 2}
+  - {fileID: 11400000, guid: 3b51c89cf52d9480a8ed7e9cb6b2ae42, type: 2}
+  - {fileID: 11400000, guid: 1545c0a11fd4245ab9ead96edb3fb8f8, type: 2}
   currentDish: {fileID: 0}
   nextLevelEffect: {fileID: 8456667856483735245, guid: 0d8de2370840a416982244345635f973, type: 3}
   gameOverAudioClip: {fileID: 8300000, guid: bfa084f96f0919142b6fe3a31f338299, type: 3}
