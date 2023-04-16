@@ -80,7 +80,7 @@ public class GameManager : MonoBehaviour
     private void Update()
     {
         if (!(player && timerText && beerometer)) return;
-        //player.drunkenness -= .005f * Time.deltaTime * currentLevel.levelSpeed;
+        player.drunkenness -= .005f * Time.deltaTime * currentLevel.levelSpeed;
         beerometer.UpdateBeerometer(player.drunkenness);
 
         CountDownTimer();
