@@ -1448,6 +1448,42 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!1 &1486317801
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1486317802}
+  m_Layer: 5
+  m_Name: placeDropA
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1486317802
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1486317801}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1597544154}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -101, y: -110}
+  m_SizeDelta: {x: 0, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1522023293
 GameObject:
   m_ObjectHideFlags: 0
@@ -1549,13 +1585,12 @@ MonoBehaviour:
   - {fileID: 1147070675}
   - {fileID: 661911313}
   DropPositions:
-  - {fileID: 878676541}
-  - {fileID: 1147070675}
-  - {fileID: 661911313}
+  - {fileID: 1486317802}
+  - {fileID: 1579806681}
   dishCounter: {fileID: 1869284435}
   defaultSprite: {fileID: 21300000, guid: f09eae8c0ea04254b90c5386a034a225, type: 3}
   defaultText: Dish
-  TweenSpeed: 0
+  TweenSpeed: 0.5
   invisible: {r: 255, g: 255, b: 255, a: 0}
   visible: {r: 0, g: 0, b: 0, a: 1}
 --- !u!1 &1525821285
@@ -1783,6 +1818,42 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b7f735d64a35cc4193d53cd7858fbc3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1579806680
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1579806681}
+  m_Layer: 5
+  m_Name: placeDropB
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1579806681
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1579806680}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1597544154}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 179, y: 0}
+  m_SizeDelta: {x: 0, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1597544153
 GameObject:
   m_ObjectHideFlags: 0
@@ -1819,6 +1890,8 @@ RectTransform:
   - {fileID: 878676541}
   - {fileID: 1147070675}
   - {fileID: 661911313}
+  - {fileID: 1486317802}
+  - {fileID: 1579806681}
   m_Father: {fileID: 1522023294}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

@@ -74,7 +74,7 @@ public class DishQueueViewer : MonoBehaviour
         var dishIcon = DishIconList[lastIndex].GetComponent<DishIcon>();
         dishIcon.ChangeData(newDish.sprite, newDish.DishName);
 
-         SlideDishTileToLeft(DishIconList[2], 2, TweenSpeed);
+        SlideDishTileToLeft(DishIconList[2], 2, TweenSpeed);
     }
 
     private async Task SlideDishTileToLeftAsync(DishIcon dishIcon, int index, float speed)
