@@ -1594,8 +1594,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   beerometer: {fileID: 952310046}
-  dishQueueViewer: {fileID: 0}
-  pointCounter: {fileID: 0}
+  dishQueueViewer: {fileID: 1522023297}
+  pointCounter: {fileID: 1382470216}
 --- !u!1 &1147070674
 GameObject:
   m_ObjectHideFlags: 0
