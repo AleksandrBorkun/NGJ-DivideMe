@@ -10,7 +10,11 @@ public class GameManager : MonoBehaviour
 
     private LevelObject currentLevel;
     private int currentLevelIndex = 0;
+
     public Dish currentDish;
+    public GameObject nextLevelEffect;
+
+
     private int currentDishIndex = 0;
     private OvenController oven;
     private Player player;
@@ -112,6 +116,7 @@ public class GameManager : MonoBehaviour
             currentDishIndex = 0;
             currentLevel = levelObjects[currentLevelIndex];
             dishQueueViewer.SetDishIconsAtLevelStart(currentLevel.dishes.ToList());
+            Instantiate(nextLevelEffect, transform);
         }
         else
         {

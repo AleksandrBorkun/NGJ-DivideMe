@@ -11,6 +11,13 @@ public class Player : MonoBehaviour
     [SerializeField] SimpleSampleCharacterControl characterController;
     [SerializeField] private AudioClip pickupAudioClip;
 
+
+    public GameObject tooDrunkEffect;
+    public GameObject tooDryEffect;
+
+    private bool isDrunkTriggered = false;
+    private bool isDryTriggered = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -26,24 +33,33 @@ public class Player : MonoBehaviour
     {
         if (drunkenness < 0.3f)
         {
-            // TODO On screen message: Too sober. Boring!
+
+            // TODO On screen sound: Too sober. Boring!
+            if (!isDryTriggered)
+            {
+                isDryTriggered = true;
+                Instantiate(tooDryEffect, GameManager.Instance.gameObject.transform);
+            }
             characterController.moveSpeedModifier = 0.5f;
         }
         else if (drunkenness > 0.8f)
         {
-            // TODO: On screen message: Too drunk! Wtf!
+            // TODO: On screen sound: Too drunk! Wtf!
+            if (!isDrunkTriggered)
+            {
+                isDrunkTriggered = true;
+                Instantiate(tooDrunkEffect, GameManager.Instance.gameObject.transform);
+            }
             characterController.moveSpeedModifier = 4f;
         }
         else
         {
             characterController.moveSpeedModifier = 1f;
+            isDryTriggered = false;
+            isDrunkTriggered = false;
         }
     }
 
-    void PlayerUpdate()
-    {
-
-    }
 
     private void OnTriggerEnter(Collider other)
     {

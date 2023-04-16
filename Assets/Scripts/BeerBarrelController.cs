@@ -8,7 +8,6 @@ public class BeerBarrelController : MonoBehaviour
     public float normalDrinkSpeed = .1f;
     public float drunkDrinkSpeed = .15f;
 
-
     private void OnTriggerStay(Collider colider)
     {
 
