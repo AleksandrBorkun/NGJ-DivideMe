@@ -80,7 +80,7 @@ public class GameManager : MonoBehaviour
     private void Update()
     {
         if (!(player && timerText && beerometer)) return;
-        player.drunkenness -= .005f * Time.deltaTime * currentLevel.levelSpeed;
+        //player.drunkenness -= .005f * Time.deltaTime * currentLevel.levelSpeed;
         beerometer.UpdateBeerometer(player.drunkenness);
 
         CountDownTimer();
@@ -113,7 +113,7 @@ public class GameManager : MonoBehaviour
 
     }
 
-    public void SetupNextDish()
+    public async void SetupNextDish()
     {
         currentDishIndex++;
         UIApi.IncrementPointsCounterOf(15);
@@ -134,7 +134,13 @@ public class GameManager : MonoBehaviour
             timeLeft += 5;
             if (currentDishIndex + 2 < currentLevel.dishes.Length)
             {
+                await dishQueueViewer.DropDishIcon(currentLevel.dishes[currentDishIndex]);
                 dishQueueViewer.DisplayNewDish(currentLevel.dishes[currentDishIndex + 2]);
+            }
+            else
+            {
+                await dishQueueViewer.DropDishIcon(currentLevel.dishes[currentDishIndex]);
+                dishQueueViewer.DisplayNewDish(currentLevel.dishes[currentDishIndex]);
             }
         }
 
