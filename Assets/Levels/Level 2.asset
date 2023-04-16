@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   numberOfDishes: 1
   dishes:
-  - {fileID: 11400000, guid: a7f2d24b126384ae5a9493a6022c2f0d, type: 2}
-  - {fileID: 11400000, guid: a7f2d24b126384ae5a9493a6022c2f0d, type: 2}
+  - {fileID: 11400000, guid: e449ac517eb0c4e3b978b24a85c07191, type: 2}
+  - {fileID: 11400000, guid: 786d92712b23548458a1c614237c3156, type: 2}
   - {fileID: 11400000, guid: a7f2d24b126384ae5a9493a6022c2f0d, type: 2}
   levelSpeed: 3
   time: 50
