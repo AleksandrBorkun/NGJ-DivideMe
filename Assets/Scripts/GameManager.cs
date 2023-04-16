@@ -106,7 +106,7 @@ public class GameManager : MonoBehaviour
     private void GameOver()
     {
         isGameOver = true;
-        //gameOverCanvas.transform.GetChild(0).gameObject.SetActive(true);
+        gameOverCanvas.transform.GetChild(0).gameObject.SetActive(true);
         AudioSource.PlayClipAtPoint(gameOverAudioClip, new Vector3(0, 0, 0));
 
         player.GetComponent<SimpleSampleCharacterControl>().gameObject.SetActive(false);
