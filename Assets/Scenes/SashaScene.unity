@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.06784614, g: 0.274145, b: 0.48477334, a: 1}
+  m_IndirectSpecularColor: {r: 0.06784823, g: 0.27414465, b: 0.48477304, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -6377,6 +6377,25 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 878672503294021165, guid: c8b83b9ba1015466fba47e83f9cf5d60, type: 3}
   - {fileID: 2262240634851324799, guid: 15879ac8fd4064e60b45180cc0425617, type: 3}
+  - {fileID: 3054576407214669044, guid: e4f63f20106344822bef2da66e4a95aa, type: 3}
+  - {fileID: 6559349961031467465, guid: da0e801c6a4df4df5a7a1694203bec4e, type: 3}
+  - {fileID: 7952680630539532369, guid: 9c0c85c31aea74965b5de12275922851, type: 3}
+  - {fileID: 1222820626764502934, guid: fb0239483dc064556a1aadf94555d33a, type: 3}
+  - {fileID: 7376881918299199423, guid: 065b929f2ca684b9b9495e5969ff143f, type: 3}
+  - {fileID: 5566911416662034302, guid: d5343ab2cbc66445db50a6d096926153, type: 3}
+  - {fileID: 8357368250944049015, guid: f4fa87d72a4df49fe8ce9c2d93a96aae, type: 3}
+  - {fileID: 7415217330896181279, guid: 3802cb6acaa034bcca04c32f0c73b49b, type: 3}
+  - {fileID: 8424952008496906518, guid: 75bb935669d7f49fcb517bccfb11e051, type: 3}
+  - {fileID: 146052719481514306, guid: 643148b8cda114042b5659c09256bc30, type: 3}
+  - {fileID: 4919392138863534461, guid: 0ccb37dde13ad44569b7f3d759d1234c, type: 3}
+  - {fileID: 7815589230065705488, guid: 916d4081f93f84aff9f508d4bbc897aa, type: 3}
+  - {fileID: 3722412512528394252, guid: 87f56e4ba6c7549aebcc7a2e8839832b, type: 3}
+  - {fileID: 133376654766643785, guid: 32647c40fe53f403ea165b471031abb3, type: 3}
+  - {fileID: 3972074428956425396, guid: 8bd1d14fdbca9407cae8f52b570969bd, type: 3}
+  - {fileID: 7934234275798020381, guid: 1bda872a9a904433c8901ef4ab90686e, type: 3}
+  - {fileID: 3658843374178449811, guid: c4d00bce4e2824591a2df112d2e02200, type: 3}
+  - {fileID: 7205184077854479725, guid: e2775a196b156474abe737b80a18aa27, type: 3}
+  - {fileID: 8168291107051156976, guid: 5c83ef6f161cf45f0a7274d6f0b22172, type: 3}
   initialIngridientsToSpawn: 0300000004000000
 --- !u!1 &736996632
 GameObject:
