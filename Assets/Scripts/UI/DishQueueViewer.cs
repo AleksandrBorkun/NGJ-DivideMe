@@ -58,15 +58,17 @@ public class DishQueueViewer : MonoBehaviour
             await SlideDishTileToLeftAsync(DishIconList[i], i, TweenSpeed);
         }
     }
-
-    public async void DisplayNewDish(Dish newDish)
+    public async Task DropDishIcon(Dish newDish)
     {
         var dish = DishIconList[0];
         await dish.transform.DOMove(DropPositions[0].position, 1f).SetEase(Ease.OutQuad).AsyncWaitForCompletion();
         DishIconList.RemoveAt(0);
         DishIconList.Add(dish);
         dish.transform.position = DropPositions[1].position;
+    }
 
+    public void DisplayNewDish(Dish newDish)
+    {
         SlideDishTileToLeft(DishIconList[0], 0, TweenSpeed);
         SlideDishTileToLeft(DishIconList[1], 1, TweenSpeed);
 
