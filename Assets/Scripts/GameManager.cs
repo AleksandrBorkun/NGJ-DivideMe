@@ -116,6 +116,7 @@ public class GameManager : MonoBehaviour
         // check if next level should be triggered
         if (currentDishIndex >= currentLevel.dishes.Length)
         {
+            timeLeft += 15;
             currentLevelIndex++;
             currentDishIndex = 0;
             currentLevel = levelObjects[currentLevelIndex];
@@ -124,6 +125,7 @@ public class GameManager : MonoBehaviour
         }
         else
         {
+            timeLeft += 5;
             if (currentDishIndex + 2 < currentLevel.dishes.Length)
             {
                 dishQueueViewer.DisplayNewDish(currentLevel.dishes[currentDishIndex + 2]);
