@@ -21,7 +21,8 @@ public class GameManager : MonoBehaviour
     float timeLeft = 60.0f;
     Timer timer;
     TextMeshProUGUI timerText;
-
+    GameOverCanvas gameOverCanvas;
+    bool isGameOver = false;
 
     public static GameManager Instance { get; private set; }
     private void Awake()
@@ -51,8 +52,8 @@ public class GameManager : MonoBehaviour
         player = FindObjectOfType<Player>();
         dishQueueViewer = FindObjectOfType<DishQueueViewer>();
         timer = FindObjectOfType<Timer>();
-
         timerText = timer.GetComponentInChildren<TextMeshProUGUI>();
+        gameOverCanvas = FindObjectOfType<GameOverCanvas>();
         Debug.Log("Game Manager Comlete Setting up level on awake");
     }
 
@@ -81,6 +82,7 @@ public class GameManager : MonoBehaviour
 
     private void CountDownTimer()
     {
+        if (isGameOver) { return; }
         timerText.text = ((int)timeLeft).ToString();
         timeLeft -= Time.deltaTime;
         if (timeLeft < 0)
@@ -92,9 +94,9 @@ public class GameManager : MonoBehaviour
 
     private void GameOver()
     {
-
-        // Time.timeScale = 0;
-        // Get player controller and disable it
+        isGameOver = true;
+        gameOverCanvas.transform.GetChild(0).gameObject.SetActive(true);
+        //Get player controller and disable it
 
     }
 
