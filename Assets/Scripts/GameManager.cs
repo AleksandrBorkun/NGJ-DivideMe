@@ -110,6 +110,7 @@ public class GameManager : MonoBehaviour
     public void SetupNextDish()
     {
         currentDishIndex++;
+        UIApi.IncrementPointsCounterOf(15);
         //dishQueueViewer.OnDishCompleted();
 
         // check if next level should be triggered

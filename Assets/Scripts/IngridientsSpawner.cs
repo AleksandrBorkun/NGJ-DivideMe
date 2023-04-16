@@ -7,12 +7,6 @@ public class IngridientsSpawner : MonoBehaviour
 
     public GameObject[] ingridientsList;
 
-    public Data.Ingridients[] initialIngridientsToSpawn;
-
-    //private void Start()
-    //{
-    //    SpawnNext(initialIngridientsToSpawn);
-    //}
 
     public void SpawnNext(Data.Ingridients[] ingridients)
     {
