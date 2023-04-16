@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -83,6 +84,11 @@ public class GameManager : MonoBehaviour
         beerometer.UpdateBeerometer(player.drunkenness);
 
         CountDownTimer();
+
+        if (isGameOver && Input.GetKeyDown("space"))
+        {
+            SceneManager.LoadScene(0);
+        }
     }
 
     private void CountDownTimer()
@@ -103,7 +109,7 @@ public class GameManager : MonoBehaviour
         gameOverCanvas.transform.GetChild(0).gameObject.SetActive(true);
         AudioSource.PlayClipAtPoint(gameOverAudioClip, new Vector3(0, 0, 0));
 
-        //Get player controller and disable it
+        player.GetComponent<SimpleSampleCharacterControl>().gameObject.SetActive(false);
 
     }
 
