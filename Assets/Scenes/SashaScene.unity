@@ -6790,6 +6790,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09aff59fc7c0c4843ac238048ffa620f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  smokeEffect: {fileID: 959850992723292791, guid: 2d52aaec94dd14a119d9a4b2d23f05e5, type: 3}
 --- !u!65 &932688896
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7825,6 +7826,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09aff59fc7c0c4843ac238048ffa620f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  smokeEffect: {fileID: 959850992723292791, guid: 2d52aaec94dd14a119d9a4b2d23f05e5, type: 3}
 --- !u!65 &1547070891
 BoxCollider:
   m_ObjectHideFlags: 0

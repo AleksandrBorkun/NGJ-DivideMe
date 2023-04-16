@@ -5,6 +5,8 @@ using UnityEngine;
 public class OvenController : MonoBehaviour
 {
 
+    public GameObject smokeEffect;
+
     private void OnCollisionEnter(Collision collision)
     {
         Dish currentDish = GameManager.Instance.currentDish;
@@ -31,7 +33,9 @@ public class OvenController : MonoBehaviour
                 inventoryObj.inventory.Remove(ingridient);
             }
 
+
             GameManager.Instance.SetupNextDish();
+            Instantiate(smokeEffect, transform);
         }
     }
 }
