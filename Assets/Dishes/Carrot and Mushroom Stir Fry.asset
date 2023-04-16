@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7bb114a5f4f5e48e082adb45573c011d, type: 3}
-  m_Name: Grilled Fish with Pineapple Salsa
+  m_Name: Carrot and Mushroom Stir Fry
   m_EditorClassIdentifier: 
-  ingridients: 0c00000010000000150000000e00000007000000
-  DishName: Grilled Fish with Pineapple
-  sprite: {fileID: 21300000, guid: 0a546e043a5a9422ea3a68b2dac21d6a, type: 3}
+  ingridients: 050000000f00000007000000
+  DishName: Carrot and Mushroom Stir Fry
+  sprite: {fileID: 21300000, guid: a3ce6a572cd5748a48f688357d5423bb, type: 3}

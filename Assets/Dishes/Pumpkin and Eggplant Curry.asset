@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7bb114a5f4f5e48e082adb45573c011d, type: 3}
-  m_Name: Grilled Fish with Pineapple Salsa
+  m_Name: Pumpkin and Eggplant Curry
   m_EditorClassIdentifier: 
-  ingridients: 0c00000010000000150000000e00000007000000
-  DishName: Grilled Fish with Pineapple
-  sprite: {fileID: 21300000, guid: 0a546e043a5a9422ea3a68b2dac21d6a, type: 3}
+  ingridients: 040000000800000014000000
+  DishName: Pumpkin and Eggplant Curry
+  sprite: {fileID: 21300000, guid: 286f16d6db31a40b69804ac6e26ee7b2, type: 3}
