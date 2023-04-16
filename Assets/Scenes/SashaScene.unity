@@ -6396,7 +6396,6 @@ MonoBehaviour:
   - {fileID: 3658843374178449811, guid: c4d00bce4e2824591a2df112d2e02200, type: 3}
   - {fileID: 7205184077854479725, guid: e2775a196b156474abe737b80a18aa27, type: 3}
   - {fileID: 8168291107051156976, guid: 5c83ef6f161cf45f0a7274d6f0b22172, type: 3}
-  initialIngridientsToSpawn: 0300000004000000
 --- !u!1 &736996632
 GameObject:
   m_ObjectHideFlags: 0
