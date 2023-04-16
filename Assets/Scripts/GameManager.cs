@@ -106,7 +106,7 @@ public class GameManager : MonoBehaviour
     private void GameOver()
     {
         isGameOver = true;
-        gameOverCanvas.transform.GetChild(0).gameObject.SetActive(true);
+        //gameOverCanvas.transform.GetChild(0).gameObject.SetActive(true);
         AudioSource.PlayClipAtPoint(gameOverAudioClip, new Vector3(0, 0, 0));
 
         player.GetComponent<SimpleSampleCharacterControl>().gameObject.SetActive(false);
@@ -126,6 +126,7 @@ public class GameManager : MonoBehaviour
             currentLevelIndex++;
             currentDishIndex = 0;
             currentLevel = levelObjects[currentLevelIndex];
+            await dishQueueViewer.DropAllDishIcon();
             dishQueueViewer.SetDishIconsAtLevelStart(currentLevel.dishes.ToList());
             Instantiate(nextLevelEffect, transform);
         }
@@ -134,12 +135,12 @@ public class GameManager : MonoBehaviour
             timeLeft += 5;
             if (currentDishIndex + 2 < currentLevel.dishes.Length)
             {
-                await dishQueueViewer.DropDishIcon(currentLevel.dishes[currentDishIndex]);
+                await dishQueueViewer.DropDishIcon();
                 dishQueueViewer.DisplayNewDish(currentLevel.dishes[currentDishIndex + 2]);
             }
             else
             {
-                await dishQueueViewer.DropDishIcon(currentLevel.dishes[currentDishIndex]);
+                await dishQueueViewer.DropDishIcon();
                 dishQueueViewer.DisplayNewDish(currentLevel.dishes[currentDishIndex]);
             }
         }

@@ -58,7 +58,7 @@ public class DishQueueViewer : MonoBehaviour
             await SlideDishTileToLeftAsync(DishIconList[i], i, TweenSpeed);
         }
     }
-    public async Task DropDishIcon(Dish newDish)
+    public async Task DropDishIcon()
     {
         var dishIcon = DishIconList[0];
         await dishIcon.transform.DOMove(DropPositions[0].position, 1f).SetEase(Ease.OutQuad).AsyncWaitForCompletion();
@@ -66,6 +66,26 @@ public class DishQueueViewer : MonoBehaviour
         DishIconList.Add(dishIcon);
         dishIcon.transform.position = DropPositions[1].position;
         dishIcon.enabled = false;
+    }
+
+    public async void HandleDropAllDishIcon()
+    {
+        await DropAllDishIcon();
+    }
+
+    public async Task DropAllDishIcon()
+    {  
+        DishIconList[0].transform.DOMove(DishIconList[0].transform.position + Vector3.down * 1000, 1f).SetEase(Ease.OutQuad);
+        DishIconList[1].transform.DOMove(DishIconList[0].transform.position + Vector3.down * 1000, 1f).SetEase(Ease.OutQuad);
+        await DishIconList[2].transform.DOMove(DishIconList[0].transform.position + Vector3.down * 1000, 1f).SetEase(Ease.OutQuad).AsyncWaitForCompletion();
+
+        DishIconList[0].transform.position = DropPositions[1].position;
+        DishIconList[1].transform.position = DropPositions[1].position;
+        DishIconList[2].transform.position = DropPositions[1].position;
+
+        DishIconList[0].enabled = false;
+        DishIconList[1].enabled = false;
+        DishIconList[2].enabled = false;
     }
 
     public void DisplayNewDish(Dish newDish)
