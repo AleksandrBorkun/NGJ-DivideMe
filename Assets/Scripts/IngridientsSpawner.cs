@@ -43,7 +43,9 @@ public class IngridientsSpawner : MonoBehaviour
 
         for (int i = 0; i < ingridients.Length; i++)
         {
-            int spawnPoint = Random.Range(fakeKids.First(), fakeKids.Count);
+            var randomIndex = Random.Range(0, fakeKids.Count);
+            int spawnPoint = fakeKids[randomIndex];
+
             Data.Ingridients ingridient;
 
 
@@ -55,7 +57,7 @@ public class IngridientsSpawner : MonoBehaviour
 
             ingridient = ingridients[i];
             spawnPoints.Add(spawnPoint, ingridient);
-            fakeKids.Remove(spawnPoint);
+            fakeKids.RemoveAt(fakeKids.IndexOf(spawnPoint));
         }
 
         Debug.Log("spawn ingridients");
