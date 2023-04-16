@@ -1524,6 +1524,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   beerometer: {fileID: 952310046}
   dishQueueViewer: {fileID: 0}
+  pointCounter: {fileID: 0}
 --- !u!1 &1147070674
 GameObject:
   m_ObjectHideFlags: 0
@@ -1690,7 +1691,7 @@ GameObject:
   - component: {fileID: 1458543015}
   - component: {fileID: 1458543014}
   m_Layer: 5
-  m_Name: Canvas_GameOver
+  m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
