@@ -10,12 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ec77626fcde814c4791ebd162a399f3e, type: 3}
-  m_Name: Level 1
+  m_Name: Level 4
   m_EditorClassIdentifier: 
   numberOfDishes: 1
   dishes:
-  - {fileID: 11400000, guid: da50d889a4c2e4edba53d4ab8886aebf, type: 2}
+  - {fileID: 11400000, guid: e449ac517eb0c4e3b978b24a85c07191, type: 2}
+  - {fileID: 11400000, guid: 786d92712b23548458a1c614237c3156, type: 2}
   - {fileID: 11400000, guid: 93cb5113833c54757803aba947d4e0ff, type: 2}
-  - {fileID: 11400000, guid: 93cb5113833c54757803aba947d4e0ff, type: 2}
+  - {fileID: 11400000, guid: e449ac517eb0c4e3b978b24a85c07191, type: 2}
+  - {fileID: 11400000, guid: a7f2d24b126384ae5a9493a6022c2f0d, type: 2}
   levelSpeed: 3
-  time: 30
+  time: 50
