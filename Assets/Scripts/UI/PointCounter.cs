@@ -17,7 +17,6 @@ public class PointCounter : MonoBehaviour
     private void Start()
     {
         counter.text = points.ToString();
-        UpdateCounter(100);
     }
 
     public void ResetCounter()
